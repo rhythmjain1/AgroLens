@@ -395,20 +395,20 @@ export default function App() {
     setIsLoading(true);
     
     // Simulate API call with mock response
-    setTimeout(() => {
-      const mockIndex = Math.floor(Math.random() * 38);
-      const result = classMap[mockIndex] || { name: "Unknown", details: ["No information available."] };
-      setPrediction(result);
-      setIsLoading(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   const mockIndex = Math.floor(Math.random() * 38);
+    //   const result = classMap[mockIndex] || { name: "Unknown", details: ["No information available."] };
+    //   setPrediction(result);
+    //   setIsLoading(false);
+    // }, 2000);
 
     // For real API, uncomment below:
-    /*
+    
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-      const res = await axios.post('http://localhost:5000/predict', formData);
+      const res = await axios.post('https://agro-lens.vercel.app', formData);
       const index = res.data.prediction;
       setPrediction(classMap[index] || { name: "Unknown", details: ["No information available."] });
     } catch (err) {
@@ -417,7 +417,7 @@ export default function App() {
     } finally {
       setIsLoading(false);
     }
-    */
+    
   };
 
   const isHealthy = prediction?.name.includes('Healthy');
