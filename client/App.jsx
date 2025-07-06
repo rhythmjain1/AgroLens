@@ -408,7 +408,7 @@ export default function App() {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('https://agro-lens.vercel.app', formData);
+      const res = await axios.post('https://d', formData);
       const index = res.data.prediction;
       setPrediction(classMap[index] || { name: "Unknown", details: ["No information available."] });
     } catch (err) {
